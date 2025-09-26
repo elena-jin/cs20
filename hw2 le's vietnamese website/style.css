@@ -1,0 +1,189 @@
+/*Style for Le's Vietnamese*/
+    :root {
+      --primary-color: #8B4513;
+      --secondary-color: #ca6925;
+      --accent-color: #c8ab74;
+      --text-color: #333;
+      --light-text: #fff;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+      line-height: 1.6;
+      padding-top: 80px; /* So the top doesnt cover text*/
+      min-height: 100vh; /* So the margin is pushed down */
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+        flex: 1; /* Makes sure footer is down */
+        }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+    }
+
+    /* This helps not show the underline of links*/
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header {
+      background: #ffd28f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 2px px rgba(0,0,0,0.1);
+    }
+    header .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header nav a {
+      margin: 0 1rem;
+      color: var(--primary-color);
+      position: relative;
+    }
+    header nav a:hover { color: var(--secondary-color); }
+    header nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -3px;
+      width: 0; height: 2px;
+      background: var(--secondary-color);
+      transition: 0.3s;
+    }
+    header nav a:hover::after { width: 100%; }
+
+    /* Fix the overflow on img and text*/
+    @media (max-width: 600px) {
+        .about { flex-direction: column; }
+        .menu-grid { grid-template-columns: 1fr; }
+        }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('main.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--light-text);
+      padding: 0 1rem;
+    }
+    .hero h1 { font-size: 10rem; margin-bottom: -2rem}
+    .hero p { font-size: 1.5rem; margin-bottom: 2rem; }
+    .hero a {
+      background: var(--secondary-color);
+      color: var(--light-text);
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px; /* Rounded out the corners so it's more aesthteic*/
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .hero a:hover { background: var(--primary-color); }
+
+    /* Sections */
+    section { padding: 4rem 1rem; }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+    }
+
+    /* Menu */
+    .menu-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 1200px;
+      margin: auto;
+    }
+    .menu-item {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .menu-item:hover { transform: translateY(-10px); }
+    .menu-item img { width: 100%; height: 200px; object-fit: cover; }
+    .menu-item .content { padding: 1rem; }
+    .menu-item h3 { color: var(--primary-color); }
+    .menu-item span { color: var(--secondary-color); font-weight: bold; }
+
+    /* About */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .about img { width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    .about-text { flex: 1; }
+
+    /* Contact */
+    form {
+      background: #fff;
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    form label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background: var(--secondary-color);
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    form button:hover { background: var(--primary-color); }
+
+    /* Footer */
+    footer {
+      background: var(--primary-color);
+      color: var(--light-text);
+      padding: 2rem 1rem;
+      margin-top: auto;
+    }
+    footer .container {
+      max-width: 1200px;
+      margin: auto;
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    /* Hover effect for Order Now*/
+    footer a:hover {
+        color: var(--secondary-color);
+        text-decoration: underline;
+    }
+    footer ul { list-style: none; padding: 0; }
+    footer ul li { margin-bottom: 0.5rem; }
