@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+        <title>
+                Joe's Hotdog Stand
+        </title>
+</head>
+
+
+<script>
+        var numDogs, numFries, numSoda;
+
+        const HOTDOG_PRICE = 4.99;
+        const FRIES_PRICE = 3.99;
+        const SODA_PRICE = 1.79;
+
+        // asks users how many
+        numDogs = parseInt(prompt("How many hotdogs do you want?"))
+        numFries = parseInt(prompt("How many fries do you want?"))
+        numSoda = parseInt(prompt("How many sodas do you want?"))
+
+        // function show money: rounds number and converts into string
+        function showMoney(number) {
+                rounded = Math.round(number * 100) / 100; // rounds to cents
+                str = rounded.toString();
+
+                if (str.indexOf(".") == -1) {
+                        str += ".00";
+                } else {
+                        array = str.split("."); // adds 0 if only 1 num after.
+                        if (array[1].length === 1) {
+                                str += "0";
+                        }
+                }
+
+                return str;
+        }
+
+
+        finalDog = numDogs * HOTDOG_PRICE;
+        finalFries = numFries * FRIES_PRICE;
+        finalSoda = numSoda * SODA_PRICE;
+
+        final = finalDog + finalFries + finalSoda;
+
+        // discount calc
+        var discount;
+        if (final > 30) {
+                discount = final * 0.10;
+        } else {
+                discount = 0;
+        }
+        
+        finalWDiscount = final - discount;
+        tax = finalWDiscount * 0.0625;
+
+        finalPrice = tax + finalWDiscount;
+
+
+        document.documentElement.style.textAlign = "center";
+
+        document.write("<h1>Joe's Hotdog Stand</h1>")
+        document.write("Thank you for shopping!")
+        document.write("<p>Hotdogs (" + numDogs + "): $" + showMoney(finalDog) + "</p>");
+        document.write("<p>Fries (" + numFries + "): $" + showMoney(finalFries) + "</p>");
+        document.write("<p>Sodas (" + numSoda + "): $" + showMoney(finalSoda) + "</p>");
+        document.write("<p>Subtotal: $" + showMoney(final) + "</p>");
+
+        if (discount === 0) {
+                document.write("<p> No discount, spend $30 > for 10% discount!</p>")
+        } else {
+                document.write("<p>Discount: $" + showMoney(discount) + "</p>");
+                document.write("<p>Subtotal after discount: $" + showMoney(finalWDiscount) + "</p>");
+        }
+
+        document.write("<p>Tax: $" + showMoney(tax) + "</p>");
+        document.write("<h2>Final Total: $" + showMoney(finalPrice) + "</h2>");
+</script>
+
+</html>
