@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Tic Tac Toe</title>
+    <style>
+
+        body {
+            font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+            box-sizing: border-box;
+            background-color: rgb(241, 165, 165);
+            transition: background-color 0.5s ease; /* Smooth transitionzz */
+
+        }
+        .square:hover {
+            background-color: rgb(230, 104, 104);
+        }
+        .board {
+            width: 300px;
+            margin: 20px auto; 
+        }
+        .board::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .status-display {
+            border: 2px solid rgb(198, 40, 67);
+            padding: 10px;
+            margin: 10px auto;
+            width: 300px;
+            text-align: center;
+            background-color: rgb(241, 212, 165);
+        }
+        .win-display {
+            border: 2px solid green;
+            padding: 10px;
+            margin: 10px auto;
+            width: 300px;
+            text-align: center;
+            background-color: rgb(165, 241, 165);
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            text-align: center;
+            padding: 10px;
+            margin: 10px auto;
+            width: 100px;
+            background-color: rgb(206, 236, 245);
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <h1>Final Tic Tac Toe</h1>
+
+    <div id="status" class="status-display">Start...</div>
+
+    <div class="board">
+        <script>
+            const NUM_SQUARES = 9;
+            for (i = 0; i < NUM_SQUARES; i++) {
+                id = "sq" + i;
+                document.write("<div class='square' id='" + id + "'></div>");
+            }
+        </script>
+    </div>
+
+    <div id="win-status" class="win-display"></div>
+
+    <div style="text-align: center;"> <button id="startBtn">Reset</button></div>
+    
+
+     <script>
+        let currentPlayer;
+        const statusDiv = document.getElementById("status");
+        // Makes it into array so we can index and use foreach
+        var squares = [].slice.call(document.getElementsByClassName("square"));
+        const winDiv = document.getElementById("win-status");
+
+        function startGame() {
+            // Randomly choose who starts
+            if (Math.random() < 0.5) {
+                currentPlayer = "X";
+            } else {
+                currentPlayer = "O";
+            }
+
+            statusDiv.innerText = currentPlayer + "'s Turn"; // Show player
+            winDiv.innerText = ""; // Shows winning statuses
+
+            // Clear board
+            var i;
+            for (i = 0; i < squares.length; i = i + 1) {
+                squares[i].innerText = "";
+                squares[i].style.pointerEvents = "auto";
+            }
+        }
+
+        // Break ties
+        function checkGameStatus() {
+            const moves = [];
+            squares.forEach(function (sq) {
+            if (sq.innerText === "") {
+                moves.push("-");
+            } else {
+                moves.push(sq.innerText);
+            }
+            });
+
+
+            // Create win conditions to get outta string
+            var winConditions = [];
+
+            winConditions.push(moves[0] + moves[1] + moves[2]); // row 1
+            winConditions.push(moves[3] + moves[4] + moves[5]); // row 2
+            winConditions.push(moves[6] + moves[7] + moves[8]); // row 3
+
+            winConditions.push(moves[0] + moves[3] + moves[6]); // col 1
+            winConditions.push(moves[1] + moves[4] + moves[7]); // col 2
+            winConditions.push(moves[2] + moves[5] + moves[8]); // col 3
+
+            winConditions.push(moves[0] + moves[4] + moves[8]); // diag \
+            winConditions.push(moves[2] + moves[4] + moves[6]); // diag /
+
+            // Check for win
+            var i;
+            for (i= 0; i< winConditions.length; i= i+ 1) {
+                if (winConditions[i] === "XXX") {
+                    winDiv.innerText = "X Wins!";
+                    endGame();
+                    return true;
+                }
+                if (winConditions[i] === "OOO") {
+                    winDiv.innerText = "O Wins!";
+                    endGame();
+                    return true;
+                }
+            }
+
+            // Check for stalemate
+            if (!moves.includes("-")) {
+                winDiv.innerText = "Stalemate!";
+                endGame();
+                return true;
+            }
+
+            return false;
+        }
+
+        function endGame() {
+            for (var i = 0; i < squares.length; i = i + 1) {
+                squares[i].style.pointerEvents = "none";
+            }
+            }
+
+        function handleClick(event) {
+            const square = event.target;
+            var index = -1;
+
+            for (var i = 0; i < squares.length; i = i + 1) {
+                if (squares[i] === square) {
+                    index = i;
+                    break;
+                }
+            }
+            alert("You clicked square " + index);
+
+            if (square.innerText !== "") return;
+
+            square.innerText = currentPlayer;
+
+            if (checkGameStatus()) return;
+
+            if (currentPlayer === "X") {
+                currentPlayer = "O";
+            } else {
+                currentPlayer = "X";
+            }        
+            statusDiv.innerText = currentPlayer + "'s Turn";
+        }
+
+        for (var i = 0; i < squares.length; i = i + 1) {
+            squares[i].addEventListener("click", handleClick);
+            }
+
+       document.getElementById("startBtn").addEventListener("click", startGame);
+       startGame();
+  </script>
+
+</body>
+</html>
