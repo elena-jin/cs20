@@ -1,4 +1,4 @@
-# cs20
+# cs20: tufts university
 cs20 hw 🐊🕸️
 
 (hw1) ~~scuffed~~ intro website: https://elena-jin.github.io/cs20/ 
