@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Part 3 Slideshow</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <img id="slideshow" src="images/Screenshot 2024-06-25 215932.png" width="400"><br>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+
+  <script>
+    $(document).ready(function() {
+      const images = [
+        "images/Screenshot 2024-06-25 215932.png",
+        "images/Screenshot 2024-03-24 200946.png",
+        "images/Screenshot 2024-03-24 201000.png",
+        "images/Screenshot 2024-03-24 201016.png",
+        "images/Screenshot 2024-03-24 201032.png"
+      ];
+
+      let index = 0;
+      let interval; 
+
+      // function that changes to the next image
+      function nextImage() {
+        $("#slideshow").fadeOut(1000, function() {
+          index = (index + 1) % images.length;
+          $("#slideshow").attr("src", images[index]);
+          $("#slideshow").fadeIn(1000);
+        });
+      }
+
+      // start button
+      $("#start").click(function() {
+        if (!interval) { // only start if not already running
+          interval = setInterval(nextImage, 1000); // change image every 1s
+        }
+      });
+
+      // stop button
+      $("#stop").click(function() {
+        clearInterval(interval);
+        interval = null;
+      });
+    });
+  </script>
+</body>
+</html>

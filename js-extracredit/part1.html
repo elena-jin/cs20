@@ -1,0 +1,27 @@
+<html>
+        <div class="jump">
+                <input type="text" id="left"/>
+                <button id="jump">JUMP</button>
+                <input type="text" id="right"/>
+        </div>       
+</html>
+
+<script>
+        const left = document.getElementById("left")
+        const right = document.getElementById("right")
+        const jump = document.getElementById("jump")
+
+        textleft = true;
+        jump.addEventListener("click", () => {
+                if (textleft == true) {
+                        right.value = left.value;
+                        left.value = "";
+                        jump.textContent = "JUMP >";
+                } else {
+                        left.value = right.value;
+                        right.value = "";
+                        jump.textContent = "< JUMP";
+                }
+                textleft = !textleft;
+        })
+</script>

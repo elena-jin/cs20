@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+        <div id="check">
+                <label><input type="checkbox" id="all"> <span id="labelText">Check all</span></label><br>
+                <label><input type="checkbox" class="option"> 1</label><br>
+                <label><input type="checkbox" class="option"> 2</label><br>
+                <label><input type="checkbox" class="option"> 3</label><br>
+                <label><input type="checkbox" class="option"> 4</label><br>
+        </div>
+</html>
+
+<script>
+        const all = document.getElementById("all")
+        const options = document.querySelectorAll(".option");
+        
+        all.addEventListener("change", function() {
+        const isChecked = all.checked;
+
+        // Check or uncheck all other boxes
+        options.forEach(box => {
+                box.checked = isChecked;
+        });
+
+        // Update label text
+        if (isChecked) {
+                labelText.textContent = "Uncheck all";
+        } else {
+                labelText.textContent = "Check all";
+        }
+        });
+
+</script>
