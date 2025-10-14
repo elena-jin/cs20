@@ -13,3 +13,9 @@ cs20 hw 🐊🕸️
         2. https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt2.html
         3. https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt3.html
         4. FINAL VERSION: https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt4.html
+        
+javascript extra credit: 
+
+        https://elena-jin.github.io/cs20/js-extracredit/part1.html
+        https://elena-jin.github.io/cs20/js-extracredit/part2.html
+        https://elena-jin.github.io/cs20/js-extracredit/part3.html
