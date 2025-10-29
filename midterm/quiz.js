@@ -7,7 +7,6 @@ const drinks = {
 document.getElementById('drink-quiz').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  // form stuff
   const morning = document.querySelector('input[name="morning"]:checked');
   const spot = document.getElementById('spot').value;
   const vibes = [...document.querySelectorAll('input[name="vibe"]:checked')];
@@ -17,7 +16,6 @@ document.getElementById('drink-quiz').addEventListener('submit', function(e) {
     return;
   }
 
-  // find personality type
   const answers = [morning.value, spot, vibes[0].value];
   const type = mostCommon(answers);
   const result = drinks[type];

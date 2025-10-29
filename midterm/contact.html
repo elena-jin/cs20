@@ -190,16 +190,15 @@
                     let fieldValue = true;
                     fieldValue = isNotEmpty(value);
 
-                    // field is empty
                     if(!fieldValue) {
                         isValid = false;
                         if(!err) {
-                            err = errorMessage[field]; // set error output
+                            err = errorMessage[field]; 
                         }
-                        elem.style.borderColor = "red"; // style
+                        elem.style.borderColor = "red"; 
                     }
                     else {
-                        elem.style.borderColor = ""; // style
+                        elem.style.borderColor = ""; 
                     }
                 }
             }

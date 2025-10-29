@@ -124,7 +124,6 @@
     </footer>
 
     <script>
-        // menu data
         const menuData = {
             "speciality": [
                 {
@@ -372,14 +371,12 @@
             ]
         };
 
-        // use a single array to store all products
         const menuItemsArray = [
             ...menuData.coffee,
             ...menuData.tea,
             ...menuData.speciality
         ];
 
-        // store size
         const sizeNames = {
             "small": "Small",
             "medium": "Medium", 
@@ -390,7 +387,6 @@
             priceElement.innerHTML = "$" + price.toFixed(2);
         }
 
-        // create Menu Item
         function createMenuItem(item) {
             var htmlContent = '';
             htmlContent += '<div class="menu-item">';
@@ -416,7 +412,6 @@
 
         function updatePrice(selectElement, itemId) {
             var item = null;
-            // find item
             for (var i = 0; i < menuData.speciality.length; i++) {
                 if (menuData.speciality[i].id === itemId) {
                     item = menuData.speciality[i];
@@ -447,19 +442,16 @@
         }
 
     function loadMenu() {
-        // load speciality
         var specialContainer = document.getElementById('special');
         for (var i = 0; i < menuData.speciality.length; i++) {
             specialContainer.appendChild(createMenuItem(menuData.speciality[i]));
         }
 
-        // load coffee
         var coffeeContainer = document.getElementById('coffee');
         for (var i = 0; i < menuData.coffee.length; i++) {
             coffeeContainer.appendChild(createMenuItem(menuData.coffee[i]));
         }
 
-        // load tea
         var teaContainer = document.getElementById('tea');
         for (var i = 0; i < menuData.tea.length; i++) {
             teaContainer.appendChild(createMenuItem(menuData.tea[i]));

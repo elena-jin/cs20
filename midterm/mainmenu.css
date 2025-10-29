@@ -75,7 +75,6 @@
     color: white;
   }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .banner {
         height: 400px;

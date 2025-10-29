@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('drinks-container');
 
-  // use json arr
   const drinks = [
     { name: "Savannah Spice", type: "hot", price: "$5.25"},
     { name: "Mask Off Matcha", type: "cold", price: "$5.00"},
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
 
-// drink card
   drinks.forEach(d => {
     const card = document.createElement('div');
     card.className = 'drink-card';
