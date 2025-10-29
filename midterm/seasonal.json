@@ -1,0 +1,5 @@
+[
+  { "name": "Savannah Spice", "type": "hot", "price": "$5.25", "image": "images/pumpkin.png" },
+  { "name": "Mask Off Matcha", "type": "cold", "price": "$5.00", "image": "images/cider.png" },
+  { "name": "Hibiscus Heat", "type": "hot", "price": "$5.50", "image": "images/maple.png" }
+]

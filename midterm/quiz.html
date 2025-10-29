@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="The Sink Quiz, Coffee Personality, Tufts Coffee Shop">
+  <title>The Sink | Drink Personality Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="quiz.js"></script>
+</head>
+<body>
+  <header>
+    <h1>What Sink Drink Are You?</h1>
+    <nav>
+      <a href="index.html"><img src="images/logo.png" alt="The Sink Logo" class="logo"></a>
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="seasonal.html">Seasonal</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form id="drink-quiz">
+      <h2>Find your perfect match</h2>
+
+      <label>1. How do you start your mornings?</label><br>
+      <input type="radio" name="morning" value="bold"> Jump right into work!<br>
+      <input type="radio" name="morning" value="sweet"> Slowly with music<br>
+      <input type="radio" name="morning" value="chill"> Scroll TikTok<br><br>
+
+      <label>2. Pick your ideal study spot:</label><br>
+      <select name="spot" id="spot">
+        <option value="">--Choose one--</option>
+        <option value="bold">Library</option>
+        <option value="sweet">Couch</option>
+        <option value="chill">Outside</option>
+      </select><br><br>
+
+      <label>3. What’s your go-to vibe?</label><br>
+      <input type="checkbox" name="vibe" value="sweet"> Cozy<br>
+      <input type="checkbox" name="vibe" value="bold"> Productive<br>
+      <input type="checkbox" name="vibe" value="chill"> Carefree<br><br>
+
+      <button type="submit">Reveal My Drink!</button>
+    </form>
+
+    <div id="result"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 The Sink | Follow us on <a href="https://www.instagram.com/the_sinkstagram/">Instagram</a></p>
+  </footer>
+</body>
+</html>
