@@ -19,3 +19,5 @@ javascript extra credit:
         https://elena-jin.github.io/cs20/js-extracredit/part1.html
         https://elena-jin.github.io/cs20/js-extracredit/part2.html
         https://elena-jin.github.io/cs20/js-extracredit/part3.html
+
+midterm project: https://elena-jin.github.io/cs20/midterm/menu.html
