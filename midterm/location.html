@@ -39,9 +39,9 @@
 
             <p1>We are located on the second floor of the Mayer Campus Center at Tufts University. <br><br><br></p1>
             <h2>Hours</h2>
-            <p1 id="hours-display">
-                <span id="weekdays-hours">Loading...</span><br>
-                <span id="weekends-hours">Loading...</span><br><br><br>
+            <p1>
+                Mon - Fri: 8 a.m. - 6 p.m. <br>
+                Sat - Sun: 12 p.m. - 6 p.m. <br><br><br>
 
                 <a href="https://maps.app.goo.gl/yDqpZfJH48wai2K76" target="_blank" class="location_button">
                     Directions
@@ -61,21 +61,7 @@
     </footer>
 
     <script>
-        // Load hours from hours.json
-        fetch('hours.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('weekdays-hours').textContent = data.weekdays.days + ': ' + data.weekdays.hours;
-                document.getElementById('weekends-hours').textContent = data.weekends.days + ': ' + data.weekends.hours;
-            })
-            .catch(error => {
-                console.error('Error loading hours:', error);
-                // Fallback if JSON fails to load
-                document.getElementById('weekdays-hours').textContent = 'Mon - Fri: 8 a.m. - 6 p.m.';
-                document.getElementById('weekends-hours').textContent = 'Sat - Sun: 12 p.m. - 6 p.m.';
-            });
     </script>
 </body>
 
 </html>
-
