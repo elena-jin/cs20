@@ -6,7 +6,7 @@
   <meta name="keywords" content="career, job, coffee, cafe, barista, hiring">
   <title>Join Our Team | Brew Haven Café</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="style.css">
 
   <style>
     body {
@@ -17,38 +17,11 @@
       line-height: 1.6;
     }
 
-    header {
-      background-color: #ffd8b0;
-      color: rgb(107, 75, 48);
-      text-align: center;
-      padding: 1rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-    }
-
-    nav {
-      margin-top: 0.5rem;
-    }
-
-    nav a {
-      color: rgb(74, 61, 52);
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
     main {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
+      margin-top: 120px;
     }
 
     h2 {
@@ -129,16 +102,22 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Sink Café</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="catering.html">Catering</a>
-      <a href="career.html">Career</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <header class="main_header">
+        <div id="sink">
+            <img src="images/logo.jpg" alt="The Sink Logo" id="logo">
+            <h1 id="title">The Sink</h1>
+        </div>
+        <ul id="nav">
+            <li><a href="mainmenu.html">Home</a></li>
+            <li><a href="seasonal.html">Seasonal</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
 
   <main>
     <section class="intro">
@@ -185,8 +164,8 @@
     </section>
   </main>
 
-  <footer>
-    &copy; Tufts Sink Cafe | All rights reserved.
+  <footer id="footer">
+    <p>&copy; Tufts Sink Cafe | All rights reserved.</p>
   </footer>
 
   <script>

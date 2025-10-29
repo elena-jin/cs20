@@ -7,6 +7,10 @@
 body {
     background-color: #f5c49d;
     padding-top: 100px;
+    font-family: "Cormorant Garamond", serif;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
 }
 
 .main_header {

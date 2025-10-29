@@ -1,0 +1,11 @@
+{
+  "weekdays": {
+    "days": "Mon - Fri",
+    "hours": "8 a.m. - 6 p.m."
+  },
+  "weekends": {
+    "days": "Sat - Sun",
+    "hours": "12 p.m. - 6 p.m."
+  }
+}
+

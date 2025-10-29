@@ -5,21 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="The Sink Quiz, Coffee Personality, Tufts Coffee Shop">
   <title>The Sink | Drink Personality Quiz</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="styles.css">
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <script defer src="quiz.js"></script>
 </head>
 <body>
-  <header>
-    <h1>What Sink Drink Are You?</h1>
-    <nav>
-      <a href="index.html"><img src="images/logo.jpg" alt="The Sink Logo" class="logo"></a>
-      <ul>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="seasonal.html">Seasonal</a></li>
-        <li><a href="quiz.html" class="active">Quiz</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header class="main_header">
+        <div id="sink">
+            <img src="images/logo.jpg" alt="The Sink Logo" id="logo">
+            <h1 id="title">The Sink</h1>
+        </div>
+        <ul id="nav">
+            <li><a href="mainmenu.html">Home</a></li>
+            <li><a href="seasonal.html">Seasonal</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+  <div style="margin-top: 120px;">
+  <h1>What Sink Drink Are You?</h1>
+  </div>
 
   <main>
     <form id="drink-quiz">
@@ -49,8 +60,8 @@
     <div id="result"></div>
   </main>
 
-  <footer>
-    <p>© 2025 The Sink | Follow us on <a href="https://www.instagram.com/the_sinkstagram/">Instagram</a></p>
+  <footer id="footer">
+    <p>&copy; 2025 The Sink | Follow us on <a href="https://www.instagram.com/the_sinkstagram/">Instagram</a></p>
   </footer>
 </body>
 </html>

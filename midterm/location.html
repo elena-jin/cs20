@@ -4,11 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Location</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="location.css" />
   <link rel="icon" type="image/x-icon" href="images/favicon.jpg">
 </head>
 
 <body>
+    <header class="main_header">
+        <div id="sink">
+            <img src="images/logo.jpg" alt="The Sink Logo" id="logo">
+            <h1 id="title">The Sink</h1>
+        </div>
+        <ul id="nav">
+            <li><a href="mainmenu.html">Home</a></li>
+            <li><a href="seasonal.html">Seasonal</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
     <div class="head">
         <h1>
             Find Us
@@ -21,9 +39,9 @@
 
             <p1>We are located on the second floor of the Mayer Campus Center at Tufts University. <br><br><br></p1>
             <h2>Hours</h2>
-            <p1>
-                Mon - Fri: 8 a.m. - 6 p.m. <br>
-                Sat - Sun: 12 p.m. - 6 p.m. <br><br><br>
+            <p1 id="hours-display">
+                <span id="weekdays-hours">Loading...</span><br>
+                <span id="weekends-hours">Loading...</span><br><br><br>
 
                 <a href="https://maps.app.goo.gl/yDqpZfJH48wai2K76" target="_blank" class="location_button">
                     Directions
@@ -36,8 +54,28 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2946.041230862885!2d-71.12244666073947!3d42.40556703234725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e376de0a735445%3A0xc700ef4d64d943da!2sMayer%20Campus%20Center!5e0!3m2!1sen!2sus!4v1761696804790!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-        </div>
-    </body>
+    </div>
+
+    <footer id="footer">
+        <p>&copy; Tufts The Sink</p>
+    </footer>
+
+    <script>
+        // Load hours from hours.json
+        fetch('hours.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('weekdays-hours').textContent = data.weekdays.days + ': ' + data.weekdays.hours;
+                document.getElementById('weekends-hours').textContent = data.weekends.days + ': ' + data.weekends.hours;
+            })
+            .catch(error => {
+                console.error('Error loading hours:', error);
+                // Fallback if JSON fails to load
+                document.getElementById('weekdays-hours').textContent = 'Mon - Fri: 8 a.m. - 6 p.m.';
+                document.getElementById('weekends-hours').textContent = 'Sat - Sun: 12 p.m. - 6 p.m.';
+            });
+    </script>
+</body>
 
 </html>
 

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="keywords" content="catering, coffee, cafe, events, corporate, wedding, party"/>
   <title>Catering | Brew Haven Café</title>
+  <link rel="stylesheet" href="style.css">
 
   <style>
   :root {
@@ -19,7 +20,7 @@
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Cormorant Garamond", serif;
     color: var(--ink);
     background: var(--bg);
   }
@@ -153,19 +154,25 @@
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <h2>Sink Café</h2>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="catering.html">Catering</a>
-      <a href="career.html">Career</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <header class="main_header">
+        <div id="sink">
+            <img src="images/logo.jpg" alt="The Sink Logo" id="logo">
+            <h1 id="title">The Sink</h1>
+        </div>
+        <ul id="nav">
+            <li><a href="mainmenu.html">Home</a></li>
+            <li><a href="seasonal.html">Seasonal</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
 
   <!-- Main -->
-  <main>
+  <main style="margin-top: 120px;">
     <h1>Catering Services</h1>
     <div class="rule"></div>
 
@@ -234,8 +241,8 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    &copy; Tufts Sink Café
+  <footer id="footer">
+    <p>&copy; Tufts Sink Café</p>
   </footer>
 
   <script>
