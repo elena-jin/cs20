@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tufts The Sink</title>
+    <title>Contact</title>
+    <meta charset="utf-8">
+    <meta name='viewport' content=“width=device-width, initial-scale=1.0”>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        body {
+            text-align: center;
+            background-color: #f5c49d;
+            padding-bottom: 60px;
+        }
+        h2 {
+            color: #8B4513;
+            font-size: 30px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        #photo {
+            display: block;
+            max-width: 200px;
+            height: auto;
+        }
+        .contact_info {
+            list-style: none;
+        }
+        .contact_info li {
+            margin-bottom: 5px;
+        }
+        .form-comp {
+            margin-bottom: 15px;
+        }
+
+        .form-comp input,
+        .form-comp select,
+        .form-comp textarea {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #afacab;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <header class="main_header">
+        <div id="sink">
+            <img src="" alt="The Sink Logo" id="logo">
+            <h1 id="title">The Sink</h1>
+        </div>
+        <ul id="nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="seasonal.html">Seasonal</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <h2>Contact Us</h2>
+    <img src="photo2.jpg" alt="Members" id="photo"> 这里改照片
+    <ul class='contact_info'>
+        <li><strong>Email:</strong>tuftssink@gmail.com</li>
+        <li><strong>Insta:</strong> <a href="https://www.instagram.com/the_sinkstagram/?hl=en" 
+        target="_blank">the_sinkstagram</a></li>
+    </ul>
+
+    <br>
+
+    <div class="contact-form">
+        <!-- Collaboration Form -->
+        <h2>Collaborate With Us</h2>
+        <div class="collaborationForm">
+            <form id="collab-form">
+                <div class="form-comp">
+                    <label for="email">Email address *</label>
+                    <input type="email" id="email" name="email">
+                    <div class="error" id="emailError"></div>
+                </div>
+                <div class="form-comp">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name">
+                    <div class="error" id="nameError"></div>
+                </div>
+                <div class="form-comp">
+                    <label for="organization">Organization *</label>
+                    <input type="text" id="organization" name="organization">
+                    <div class="error" id="organizationError"></div>
+                </div>
+                <div class="form-comp">
+                    <label for="collabType">Collaboration Type *</label>
+                    <select id="collaborationType" name="collaborationType">
+                        <option value="">Choose an option</option>
+                        <option value="sponsor">Sponsorship</option>
+                        <option value="partner">Partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="error" id="collabError"></div>
+                </div>
+                <div class="form-comp">
+                    <label for="description">Description *</label>
+                    <textarea id="description" name="description" 
+                    rows="6" placeholder="Please describe your collaboration idea..."></textarea>
+                    <div class="error" id="descriptionError"></div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <br><br>
+
+        <!-- Feedback Form -->
+        <h2>Anonymous Feedback Box</h2>
+        <div class="feedbackForm">
+            <form id="feedback-form">
+                <div class="form-comp">
+                    <label for="feedback">Your Feedback *</label>
+                    <textarea id="feedback" name="feedback" 
+                    rows="6" placeholder="We value your honest feedback..."></textarea>
+                    <div class="error" id="feedbackError"></div>
+                </div>
+                <button type="submit">Submit Anonymously</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <p>&copy; Tufts The Sink</p>
+    </footer>
+
+    <script>
+        // Javascript associative arrays for error messages
+        const collaborationErrors = {
+            email: "Please enter a valid email address",
+            name: "Please enter your name",
+            organization: "Please enter your organization name",
+            collaborationType: "Please select a collaboration type",
+            description: "Please describe your collaboration idea"
+        };
+        const feedbackErrors = {
+            feedback: "Please share your feedback"
+        };
+
+        // DOM object
+        const collaborationForm = document.getElementById("collab-form");
+        const feedbackForm = document.getElementById("feedback-form");
+
+        function isNotEmpty(value) {
+            return value.trim() !== '';
+        }
+
+        // Form Validation
+        function validate(form, successMessage, errorMessage) {
+            let isValid = true;
+            let err = "";
+            for(const field in errorMessage) {
+                const elem = document.getElementById(field);
+                if(elem) {
+                    const value = elem.value.trim();
+                    let fieldValue = true;
+                    fieldValue = isNotEmpty(value);
+
+                    // field is empty
+                    if(!fieldValue) {
+                        isValid = false;
+                        if(!err) {
+                            err = errorMessage[field]; // set error output
+                        }
+                        elem.style.borderColor = "red"; // style
+                    }
+                    else {
+                        elem.style.borderColor = ""; // style
+                    }
+                }
+            }
+
+            if(isValid) {
+                alert(successMessage);
+                form.reset();
+                return true;
+            }
+            else {
+                alert(err || "Please fill in all required fields correctly.")
+            }
+        }
+
+        collaborationForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            validate(this, "Thank you for your collaboration request! We will get back to you soon.", collaborationErrors);
+        });
+        feedbackForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            validate(this, "Thank you for your collaboration request! We will get back to you soon.", feedbackErrors);
+        });
+    </script>
+</body>
+</html>
