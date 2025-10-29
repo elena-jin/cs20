@@ -42,6 +42,38 @@
             font-size: 12px;
             margin-bottom: 5px;
         }
+
+        @media (max-width: 768px) {
+            .menu-items {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .item-name {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-items {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            .item-name {
+                font-size: 14px;
+            }
+            .menu-category {
+                margin-bottom: 30px;
+            }
+        }
     </style>
     
 </head>

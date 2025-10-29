@@ -56,3 +56,64 @@ body {
     background-color: white;
     color: #8B4513;
   }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .head {
+        margin-top: 80px;
+        padding: 15px;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .text {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .location_button {
+        padding: 15px 25px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .head {
+        margin-top: 100px;
+        padding: 10px;
+    }
+
+    .head h1 {
+        font-size: 24px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+    .text h2 {
+        font-size: 18px;
+    }
+
+    .map iframe {
+        height: 250px;
+    }
+
+    .location_button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}

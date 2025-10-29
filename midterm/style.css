@@ -80,3 +80,107 @@ body {
     padding: 5px;
     text-align: center;
 }
+
+#footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#footer a {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+
+    .main_header {
+        padding: 8px 15px;
+        flex-wrap: wrap;
+    }
+
+    #sink {
+        margin-right: 0;
+        gap: 10px;
+    }
+
+    #logo {
+        height: 50px;
+    }
+
+    #title {
+        font-size: 20px;
+    }
+
+    #nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 14px;
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    #nav li {
+        flex: 1 1 auto;
+        min-width: auto;
+    }
+
+    #nav a {
+        padding: 3px 8px;
+        font-size: 14px;
+    }
+
+    #footer {
+        padding: 8px;
+    }
+
+    #footer p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 100px;
+    }
+
+    .main_header {
+        padding: 5px 10px;
+    }
+
+    #sink {
+        gap: 8px;
+    }
+
+    #logo {
+        height: 40px;
+    }
+
+    #title {
+        font-size: 18px;
+    }
+
+    #nav {
+        gap: 5px;
+        font-size: 12px;
+        padding: 5px 0;
+    }
+
+    #nav a {
+        padding: 2px 5px;
+        font-size: 12px;
+    }
+
+    #footer p {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    #seasonal-image {
+        width: 80%;
+        max-width: 100%;
+    }
+}

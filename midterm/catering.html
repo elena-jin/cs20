@@ -138,7 +138,6 @@
     transform: translateY(-1px);
   }
 
-  /* Footer */
   footer {
     margin-top: 48px;
     border-top: 1px solid var(--line);
@@ -147,14 +146,68 @@
     background: var(--header-bg);
   }
 
-  /* Responsive */
-  @media (max-width: 720px) {
-    .two-col { flex-direction: column; }
+  @media (max-width: 768px) {
+    main {
+      margin-top: 100px;
+      padding: 0 10px;
+    }
+    .two-col { 
+      flex-direction: column; 
+      gap: 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    form {
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    main {
+      margin-top: 100px;
+      padding: 0 8px;
+    }
+    .two-col { 
+      flex-direction: column;
+      gap: 15px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      letter-spacing: 0;
+    }
+    .rule {
+      width: 40px;
+    }
+    form {
+      padding: 12px;
+    }
+    label {
+      font-size: 0.9rem;
+      margin: 8px 0 4px;
+    }
+    input, select, textarea {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 0.9rem;
+    }
+    .row {
+      flex-direction: column;
+    }
+    ul {
+      padding-left: 15px;
+      font-size: 0.9rem;
+    }
+    .intro p {
+      font-size: 0.95rem;
+    }
   }
 </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="main_header">
         <div id="sink">
             <a href="mainmenu.html">
@@ -174,7 +227,6 @@
         </ul>
     </header>
 
-  <!-- Main -->
   <main style="margin-top: 120px;">
     <h1>Catering Services</h1>
     <div class="rule"></div>
@@ -199,7 +251,6 @@
         </p>
       </section>
 
-      <!-- form -->
       <section class="col">
         <form id="cateringForm" novalidate>
           <div class="row">
@@ -243,7 +294,6 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer id="footer">
     <p>&copy; 2025 The Sink | <a href="https://www.instagram.com/the_sinkstagram/">Instagram</a></p>
   </footer>
