@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="career, job, coffee, cafe, barista, hiring">
+  <title>Join Our Team | Brew Haven Café</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+  <style>
+    body {
+      font-family: "Cormorant Garamond", serif;
+      margin: 0;
+      background-color: #faf7f2;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #ffd8b0;
+      color: rgb(107, 75, 48);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: rgb(74, 61, 52);
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #654321;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      margin-bottom: 40px;
+    }
+
+    .job-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .job {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 16px 20px;
+    }
+
+    .job-info {
+      flex: 1 1 60%;
+    }
+
+    .job h3 {
+      margin: 0 0 8px;
+      color: #654321;
+    }
+
+    .job p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+    }
+
+    button {
+      background-color: #654321;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin: 12px;
+    }
+
+    button:hover {
+      background-color: #523015;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      .job {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      button {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sink Café</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="catering.html">Catering</a>
+      <a href="career.html">Career</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Join Our Team</h2>
+      <p>We’re looking for passionate, friendly, and dedicated people to join our growing family at Sink. If you love great coffee and an energetic team environment, we’d love to meet you!</p>
+    </section>
+
+    <section class="job-list">
+      <div class="job">
+        <div class="job-info">
+          <h3>Barista</h3>
+          <p>Responsibilities include preparing espresso drinks, serving pastries, and maintaining a welcoming atmosphere for customers.</p>
+          <p><strong>Schedule:</strong> Full-time or Part-time</p>
+        </div>
+        <button onclick="apply('barista')">Apply</button>
+      </div>
+
+      <div class="job">
+        <div class="job-info">
+          <h3>Baker</h3>
+          <p>Prepare daily pastries, cakes, and desserts for display. Experience in baking or culinary school is preferred.</p>
+          <p><strong>Schedule:</strong> Early morning shifts, 5 days/week</p>
+        </div>
+        <button onclick="apply('baker')">Apply</button>
+      </div>
+
+      <div class="job">
+        <div class="job-info">
+          <h3>Store Manager</h3>
+          <p>Lead and support our café team, ensure quality service, and manage daily operations including inventory and scheduling.</p>
+          <p><strong>Schedule:</strong> Full-time, mornings and weekends</p>
+        </div>
+        <button onclick="apply('manager')">Apply</button>
+      </div>
+
+      <div class="job">
+        <div class="job-info">
+          <h3>Cashier</h3>
+          <p>Provide friendly customer service, take orders accurately, and assist with daily café tasks.</p>
+          <p><strong>Schedule:</strong> Part-time, flexible hours</p>
+        </div>
+        <button onclick="apply('cashier')">Apply</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Tufts Sink Cafe | All rights reserved.
+  </footer>
+
+  <script>
+    function apply(role) {
+      alert("You selected to apply for the " + role + " position!");
+    }
+  </script>
+</body>
+</html>

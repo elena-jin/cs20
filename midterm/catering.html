@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="catering, coffee, cafe, events, corporate, wedding, party"/>
+  <title>Catering | Brew Haven Café</title>
+
+  <style>
+  :root {
+    --ink: #3b2f2f;          
+    --line: #e5d6c2;         
+    --bg: #fffaf3;           
+    --accent: #c56a24;       
+    --accent-dark: #9a4d16; 
+    --header-bg: #f5ece3;    
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+  }
+
+  /* Header & Footer */
+  header, footer {
+    padding: 16px;
+    text-align: center;
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--line);
+  }
+  header h2 {
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  nav a:hover {
+    color: var(--accent-dark);
+  }
+
+  /* Main */
+  main {
+    max-width: 980px;
+    margin: 30px auto;
+    padding: 0 16px;
+  }
+  h1 {
+    color: var(--accent-dark);
+    margin-bottom: 10px;
+    letter-spacing: 0.03em;
+  }
+  .rule {
+    height: 2px;
+    width: 60px;
+    background: var(--accent);
+    margin: 8px 0 20px;
+  }
+
+  /* Two-column layout */
+  .two-col {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .col {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .intro p {
+    line-height: 1.7;
+    margin: 0 0 12px;
+  }
+  ul {
+    padding-left: 20px;
+    margin: 8px 0 0;
+  }
+
+  /* Form box */
+  form {
+    border: 1px solid var(--line);
+    padding: 20px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  label {
+    display: block;
+    margin: 10px 0 6px;
+    font-weight: 600;
+    color: var(--accent-dark);
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccb89d;
+    border-radius: 4px;
+    font: inherit;
+    background: #fffaf3;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 96px;
+  }
+
+  .row {
+    display: flex;
+    gap: 12px;
+  }
+  .row > div {
+    flex: 1;
+  }
+
+  /* Button */
+  button {
+    margin-top: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.1s;
+  }
+  button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--line);
+    color: #5c4e4e;
+    font-size: 0.9rem;
+    background: var(--header-bg);
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .two-col { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h2>Sink Café</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="catering.html">Catering</a>
+      <a href="career.html">Career</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <h1>Catering Services</h1>
+    <div class="rule"></div>
+
+    <div class="two-col">
+      <section class="col intro">
+        <p>
+          We provide coffee catering for corporate meetings, campus events, weddings,
+          and private parties. From pour-over bars to espresso stations and pastry
+          platters, our team brings a full café experience to your venue.
+        </p>
+        <p><strong>What we offer:</strong></p>
+        <ul>
+          <li>Espresso bar with barista (machine + grinder on site)</li>
+          <li>Batch-brew coffee & hot tea service</li>
+          <li>Cold brew & specialty drinks (seasonal)</li>
+          <li>Pastry platters and light bites</li>
+          <li>Onsite setup, cups, napkins, and cleanup</li>
+        </ul>
+        <p style="margin-top:12px;">
+          Tell us about your event and we’ll send a custom quote within one business day.
+        </p>
+      </section>
+
+      <!-- form -->
+      <section class="col">
+        <form id="cateringForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" placeholder="Full name" required />
+            </div>
+            <div>
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="date">Event Date *</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div>
+              <label for="guests">Guest Count *</label>
+              <input type="number" id="guests" name="guests" min="1" placeholder="e.g., 50" required />
+            </div>
+          </div>
+
+          <label for="type">Event Type *</label>
+          <select id="type" name="type" required>
+            <option value="">Select one</option>
+            <option>Corporate Meeting</option>
+            <option>Wedding</option>
+            <option>Campus Event</option>
+            <option>Private Party</option>
+            <option>Other</option>
+          </select>
+
+          <label for="message">Notes / Menu Preferences</label>
+          <textarea id="message" name="message" placeholder="Tell us about location, timing, drinks/pastries, etc."></textarea>
+
+          <button type="submit">Request a Quote</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Tufts Sink Café
+  </footer>
+
+  <script>
+    document.getElementById("cateringForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name   = document.getElementById("name").value.trim();
+      const email  = document.getElementById("email").value.trim();
+      const date   = document.getElementById("date").value;
+      const guests = document.getElementById("guests").value.trim();
+      const type   = document.getElementById("type").value;
+
+      if(!name || !email || !date || !guests || !type){
+        alert("Please fill out all required fields (*)");
+        return;
+      }
+      if(!email.includes("@") || !email.includes(".")){
+        alert("Please enter a valid email address.");
+        return;
+      }
+      if(Number(guests) <= 0){
+        alert("Guest count must be a positive number.");
+        return;
+      }
+
+      alert("Thanks! We received your catering request and will reply within one business day.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
