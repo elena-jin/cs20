@@ -13,6 +13,8 @@ cs20 hw 🐊🕸️
         2. https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt2.html
         3. https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt3.html
         4. FINAL VERSION: https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt4.html
+
+(hw5) react needs npm run so just download this and then put that there :D
         
 javascript extra credit: 
 
@@ -21,3 +23,10 @@ javascript extra credit:
         https://elena-jin.github.io/cs20/js-extracredit/part3.html
 
 midterm project: https://elena-jin.github.io/cs20/midterm/mainmenu.html
+        (with yoyo, scarlett, emma and i)
+
+(hw5) practice with json & api ** USE VSCODE LIVE SERVER EXTENSION **: 
+        products1.html: https://elena-jin.github.io/cs20/hw5-api/products1.html
+        products2.html: https://elena-jin.github.io/cs20/hw5-api/products2.html
+        products3.html: https://elena-jin.github.io/cs20/hw5-api/products3.html
+        NASA random image generator api: https://elena-jin.github.io/cs20/hw5-api/api.html
