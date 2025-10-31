@@ -20,19 +20,20 @@ document.getElementById('drink-quiz').addEventListener('submit', function(e) {
   const type = mostCommon(answers);
   const result = drinks[type];
 
+  /*dynamically updates the webpage to display the user’s personalized result */
   document.getElementById('result').innerHTML = `
     <h3>You’re a ${result.name}!</h3>
     <p>${result.desc}</p>  `;
 });
 
-function mostCommon(arr) {
-  const freq = {};
-  arr.forEach(a => freq[a] = (freq[a] || 0) + 1);
-  return Object.keys(freq).reduce((a, b) => {
-  if (freq[a] > freq[b]) {
-    return a;
-  } else {
-    return b;
-  }
-});
-}
+// function mostCommon(arr) {
+//   const freq = {};
+//   arr.forEach(a => freq[a] = (freq[a] || 0) + 1);
+//   return Object.keys(freq).reduce((a, b) => {
+//   if (freq[a] > freq[b]) {
+//     return a;
+//   } else {
+//     return b;
+//   }
+// });
+// }

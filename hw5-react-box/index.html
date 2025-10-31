@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Create an <h1> that displays “Animal Flashcards”
+Create a set of 4 buttons. They should be labelled with the names of 4 animals.
+When the button is pressed, a popup should show the sound the animal makes.
+For example, if the button face has “dog”, the popup will show something like:
+“The dog says woof”
+It is suggested that you use arrays, objects and components, but you any implementation is
+acceptable as long as you use JSX. Use babel to create this problem in an html file. -->
+        
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animal Flashcards</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const animalData = [
+        { name: 'Dog', sound: 'Bark'},
+        { name: 'Cat', sound: 'Meow'},
+        { name: 'Bird', sound: 'Chirp'},
+        { name: 'Cow', sound: 'Moo'},
+];
+
+const AnimalButton = ({animal}) => {
+        const handleClick = () => {
+                alert(`The ${animal.name} says "${animal.sound}"`);
+        };
+
+        return (<button onClick ={handleClick}>{animal.name}</button>);
+};
+
+const App = () => {
+        return (
+                <div style = {{padding: '10px', textAlign:'center'}}>
+                        <h1>Animal Flashcards</h1>
+
+                <div style = {{display:'flex', justifyContent:'center', flexWrap: 'wrap'}}>
+                        {animalData.map((animal => 
+                        <AnimalButton 
+                                key = {animal.name} 
+                                animal = {animal} />))}
+                </div>
+                </div>
+        );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+</script>
+</body>
+<html>

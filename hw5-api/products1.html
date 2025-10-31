@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products 1 - JSON Display</title>
+    <style>
+        body { font-family: Times New Roman, sans-serif; margin: 20px; background: #cecceb; }
+    </style>
+</head>
+<body>
+    <h1>Products JSON Data</h1>
+    <div id="json-output"></div>
+
+    <script>
+        var productsJSON = {
+            "products": [
+                {
+                    "name": "Vintage T-shirt",
+                    "description": "Tie-die Grateful Dead T-shirt",
+                    "price": 35000,
+                    "categories": ["clothing", "vintage"]
+                },
+                {
+                    "name": "Pixar Lamp Halloween",
+                    "description": "Disney desk lamp",
+                    "price": 66.00,
+                    "categories": ["electronics", "office", "lighting", "vintage"]
+                },
+                {
+                    "name": "Apple from Cupertino",
+                    "description": "Snack to help ace your FAANG interviews",
+                    "price": 15.50,
+                    "categories": ["kitchen", "office", "vintage"]
+                },
+                {
+                    "name": "Airpods Pro Max 1000000",
+                    "description": "Expensive af bluetooth headphones",
+                    "price": 999.99,
+                    "categories": ["electronics", "audio", "office"]
+                },
+                {
+                    "name": "Hoka sneakers for Boston Marathon",
+                    "description": "Pro running shoes",
+                    "price": 189.99,
+                    "categories": ["clothing", "sports", "footwear"]
+                }
+        ]
+        };
+
+        var jsonString = JSON.stringify(productsJSON, null, 2);
+        document.getElementById('json-output').innerHTML = '<pre>' + 
+                jsonString + '</pre>';
+    </script>
+</body>
+</html>

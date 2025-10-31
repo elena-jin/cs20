@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Astronomy Picture of the Day</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #031f50;
+            color: white;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #fc3d21;
+            margin-bottom: 30px;
+        }
+        .controls {
+            text-align: center;
+            margin: 30px 0;
+        }
+        button {
+            background: #ad3725;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+        
+        .apod-image {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NASA Picture of the Day</h1>
+        
+        <div class="controls">
+            <button id="getApod">Discover New Space Image!</button>
+        </div>
+        
+        <div id="apodResult"></div>
+        
+        <div class="info-section">
+            <h2 style="color: #FF0000;">About This API</h2>
+            
+            <h3 style="color: #e7a2a2;">API Selected: NASA Astronomy Picture of the Day (APOD)</h3>
+            <p><strong>Why I selected it:</strong> I chose NASA's APOD API because it provides cute astronomical images with detailed explanations. It perfectly demonstrates how APIs can do so many random things and get images by specifying different dates makes it perfect for your "random image on click" requirement.</p>
+            
+            <p><strong>Source:</strong> <a href="https://api.nasa.gov/" target="_blank">https://api.nasa.gov/</a></p>
+            
+            <h3>API Parameters Used:</h3>
+            <ul>
+                <li><strong>api_key:</strong> I generated my own thats required for authentication</li>
+                <li><strong>date:</strong> Randomly generated dates between 1995-06-16 (when APOD started) & today</li>
+            </ul>
+            
+            <h3>How It Works:</h3>
+            <p>Each click makes the application generates a random date and fetches the APOD for that specific date from NASA's API.</p>
+            
+            <h3>Example Use Cases:</h3>
+            <ul>
+                <li><strong>Instagram robots:</strong> Generate picstures for instagram pages to get followers</li>
+                <li><strong>Educational websites:</strong> Teachers share with their students</li>
+                <li><strong>Wallpaper apps:</strong> Developers can create apps that set NASA images as desktop/mobile wallpapers</li>
+                <li><strong>Web apps:</strong> Astronomy enthusiasts can build apps that showcase different space images each day</li>
+                <li><strong>Digital msuem:</strong> Museums, planetariums, or science centers show rotating space imagery, eg Museum of Science Boston</li>
+                <li><strong>Newspaper:</strong> Science journalists can embed relevant astronomical images in their articles</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('getApod').addEventListener('click', function() {
+            getRandomApod();
+        });
+
+        function getRandomApod() {
+            const resultDiv = document.getElementById('apodResult');
+            const button = document.getElementById('getApod');
+            
+            button.disabled = true;
+            button.textContent = 'Loading Space Image...';
+            resultDiv.innerHTML = '<div>Contacting NASA...</div>';
+
+            // gen a random date between APOD start date (1995-06-16) and today
+            const startDate = new Date('1995-06-16');
+            const endDate = new Date();
+            const randomDate = new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime()));
+            
+            const dateString = randomDate.toISOString().split('T')[0];
+
+            // my api key DONT USE
+            const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=fXFfoeGWAR2LFIg8ZW4zfDsraVQq1pCXeoQ93LyS&date=${dateString}`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('NASA API response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error) {
+                        throw new Error(data.error.message);
+                    }
+                    
+                    let html = `
+                        <div>
+                            <p><strong>Date:</strong> ${data.date}</p>
+                            <p><strong>Title:</strong> ${data.title}</p>
+                    `;
+                    
+                    if (data.media_type === 'image') {
+                        html += `<img src="${data.url}" alt="${data.title}" class="apod-image">`;
+                    } else if (data.media_type === 'video') {
+                        html += `<p><a href="${data.url}" target="_blank">Watch Video</a></p>`;
+                    }
+                    
+                    html += `
+                            <p><strong>Explanation:</strong> ${data.explanation}</p>
+                        </div>
+                    `;
+                    
+                    resultDiv.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    resultDiv.innerHTML = `
+                        <div>
+                            <h3>Error Loading Image</h3>
+                            <p>Failed to retrieve space image: ${error.message}</p>
+                            <p>Please try again later.</p>
+                        </div>
+                    `;
+                })
+                .finally(() => {
+                    button.disabled = false;
+                    button.textContent = 'Discover New Space Image!';
+                });
+        }
+
+        window.onload = function() {
+            getRandomApod();
+        };
+    </script>
+</body>
+</html>

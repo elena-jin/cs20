@@ -1,4 +1,4 @@
-
+/* universal selector selecitn all elements on the page */
 * {
     margin: 0;
     padding: 0;
@@ -13,12 +13,13 @@ body {
     line-height: 1.6;
 }
 
+
 #seasonal-image {
   display: block;
   margin: 10px auto;
   width: 20%;
   max-width: 50;
-  border-radius: 12px;
+  border-radius: 12px; /*rounded vibes*/
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
@@ -29,11 +30,12 @@ body {
     justify-content: space-between;
     padding: 10px 50px 10px 20px;
     background-color:#8B4513;
-    z-index: 1000;
+    z-index: 1000; /*default stacking level*/
     width: 100%;
     top: 0;
 }
 
+/* id selector for sink navbar,flexbox group for items (like icons or a logo).*/
 #sink {
     display: flex;
     align-items: center;
@@ -60,6 +62,7 @@ body {
     list-style: none;
 }
 
+/* nav txt bar */
 #nav a {
     text-decoration: none;
     color: #e3a97a;
@@ -123,6 +126,7 @@ body {
         justify-content: center;
     }
 
+    /*nav list to prevent overflow*/
     #nav li {
         flex: 1 1 auto;
         min-width: auto;

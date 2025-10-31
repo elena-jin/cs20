@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products 3 - Filter Products</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { 
+            font-family: 'Times New Roman', Times, serif, sans-serif; 
+            margin: 20px; 
+            background: #b49ade;
+            text-align: center;
+            color: #483565;
+        }
+        .controls { 
+            margin: 40px 0; 
+            padding: 25px;
+            text-align: center;
+        }
+        .filter-results { 
+            margin-top: 30px; 
+            padding: 25px;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color: #805cb8;
+            font-style: italic;
+        }
+        select, button { 
+            padding: 8px 12px; 
+            margin: 0 10px;
+            color: #3d1e6f;
+            background-color: #d8c8f0;
+            border: 1px solid #3d1e6f;
+        }
+        button {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #c5b0e6;
+        }
+        button:disabled {
+            background-color: #a099b0;
+            cursor: not-allowed;
+            color: #6d6580;
+        }
+        .product, .product-item {
+            color: #3d1e6f;
+            margin: 10px 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1  style="color: #3d1e6f; font-style: italic;">Product Filter</h1>
+    
+    <div class="controls">
+        <select id="categorySelect" disabled>
+            <option value="">Select a category</option>
+        </select>
+        <button id="filterBtn" disabled>Filter</button>
+    </div>
+    
+    <div id="result"></div>
+    <div id="filterResults" class="filter-results"></div>
+
+    <script>
+        $(document).ready(function() {
+            let allProducts = [];
+            let categories = [];
+
+            
+                $.get('products.json', function(data) {
+                    if (typeof data === 'string') {
+                        data = JSON.parse(data);
+                    }
+                    
+                    allProducts = data.products;
+                    
+                    populateCategories(allProducts);
+                    
+                    $('#categorySelect').prop('disabled', false);
+                    $('#filterBtn').prop('disabled', false);
+                });
+            
+
+            $('#filterBtn').click(function() {
+                const selectedCategory = $('#categorySelect').val();
+                if (selectedCategory) {
+                    filterProducts(selectedCategory);
+                }
+            });
+
+            function displayProducts(products) {
+                let html = '<h2>All Products</h2>';
+                products.forEach(function(product) {
+                    html += '<div class="product">';
+                    html += '<div class="product-name">' + product.name + '</div>';
+                    html += '<div class="product-description">' + product.description + '</div>';
+                    html += '<div class="product-price">Price: $' + product.price + '</div>';
+                    html += '<div class="categories">Categories: ' + product.categories.join(', ') + '</div>';
+                    html += '</div>';
+                });
+                $('#result').html(html);
+            }
+
+            function populateCategories(products) {
+                categories = [];
+                
+                products.forEach(function(product) {
+                    product.categories.forEach(function(category) {
+                        if (!categories.includes(category)) {
+                            categories.push(category);
+                        }
+                    });
+                });
+
+                categories.sort();
+                const categorySelect = $('#categorySelect');
+                categorySelect.empty();
+                categorySelect.append('<option value="">Select a category</option>');
+                
+                categories.forEach(function(category) {
+                    categorySelect.append('<option value="' + category + '">' + category + '</option>');
+                });
+            }
+
+            function filterProducts(category) {
+                const filteredProducts = allProducts.filter(function(product) {
+                    return product.categories.includes(category);
+                });
+
+                let html = '<h2>Products in category: ' + category + '</h2>';
+                if (filteredProducts.length > 0) {
+                    filteredProducts.forEach(function(product) {
+                        html += '<div class="product-item">' + product.name + '</div>';
+                    });
+                } else {
+                    html += '<p>No products found in this category.</p>';
+                }
+                
+                $('#filterResults').html(html);
+            }
+        });
+    </script>
+</body>
+</html>

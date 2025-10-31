@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products 2 - JSON Reader</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Times New Roman, sans-serif; margin: 20px; background: #dddcec; justify-content: center;text-align: center;}
+        .product { border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px; justify-content: center;text-align: center;}
+        .product-name { font-size: 1.2em; font-weight: bold; color: #230e78; justify-content: center;text-align: center;}
+        .product-price { color: #ae96ec; font-weight: bold; justify-content: center;text-align: center;}
+        .categories { color: #420065; justify-content: center;}
+        button { padding: 10px 15px; background: #987cd0; color: white; border: none; cursor: pointer;justify-content: center; text-align: center;}
+        button:hover { background: #3d1e6f; }
+    </style>
+</head>
+<body>
+    <h1 style="color: #3d1e6f; font-style: italic;">Product Display</h1>
+    <button id="loadProducts">Load Products</button>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#loadProducts').click(function() {
+                $.get('products.json', function(data) {
+                    if (typeof data === 'object') {
+                        displayProducts(data);
+                    } else {
+                        try {
+                            var parsedData = JSON.parse(data);
+                            displayProducts(parsedData);
+                        } catch (e) {
+                            $('#result').html('<p>Error parsing JSON data</p>');
+                        }
+                    }
+                }).fail(function() {
+                    $('#result').html('<p>Error loading products.json file</p>');
+                });
+            });
+
+            function displayProducts(data) {
+                var html = '';
+                data.products.forEach(function(product) {
+                    html += '<div class="product">';
+                    html += '<div class="product-name">' + product.name + '</div>';
+                    html += '<div class="product-description">' + product.description + '</div>';
+                    html += '<div class="product-price">Price: $' + product.price + '</div>';
+                    html += '<div class="categories">Categories: ' + product.categories.join(', ') + '</div>';
+                    html += '</div>';
+                });
+                $('#result').html(html);
+            }
+        });
+    </script>
+</body>
+</html>
