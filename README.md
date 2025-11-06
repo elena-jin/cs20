@@ -25,7 +25,7 @@ javascript extra credit:
 midterm project: https://elena-jin.github.io/cs20/midterm/mainmenu.html
         (with yoyo, scarlett, emma and i)
 
-(hw5) practice with json & api ** USE VSCODE LIVE SERVER EXTENSION **: 
+(hw6) practice with json & api ** USE VSCODE LIVE SERVER EXTENSION **: 
         products1.html: https://elena-jin.github.io/cs20/hw5-api/products1.html
         products2.html: https://elena-jin.github.io/cs20/hw5-api/products2.html
         products3.html: https://elena-jin.github.io/cs20/hw5-api/products3.html
