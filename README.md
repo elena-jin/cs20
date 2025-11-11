@@ -32,9 +32,8 @@ midterm project: https://elena-jin.github.io/cs20/midterm/mainmenu.html
         products3.html: https://elena-jin.github.io/cs20/hw5-api/products3.html
         NASA random image generator api: https://elena-jin.github.io/cs20/hw5-api/api.html
 
-php extra cred: 
-
-        https://elenaj.sgedu.site/php/times.php?n=3
-        https://elenaj.sgedu.site/php/assoc_array.php
-        https://elenaj.sgedu.site/php/objects.php
-        https://elenaj.sgedu.site/php/database.php
+## PHP Extra Credit
+- [Times](https://elenaj.sgedu.site/php/times.php?n=3)
+- [Associative Array](https://elenaj.sgedu.site/php/assoc_array.php)
+- [Objects](https://elenaj.sgedu.site/php/objects.php)
+- [Database](https://elenaj.sgedu.site/php/database.php)
