@@ -1,20 +1,20 @@
 # cs20: tufts university
 cs20 hw 🐊🕸️
 
-(hw1) ~~scuffed~~ intro website: https://elena-jin.github.io/cs20/ 
+**(hw1)** ~~scuffed~~ intro website: https://elena-jin.github.io/cs20/ 
 
-(hw2ab) website for le's vietnamese restaurant: https://elena-jin.github.io/cs20/hw2-les-vietnamese-website/
+**(hw2ab)** website for le's vietnamese restaurant: https://elena-jin.github.io/cs20/hw2-les-vietnamese-website/
 
-(hw3) joe's hotdog website: https://elena-jin.github.io/cs20/hw3-joes-hot-dogs/
+**(hw3)** joe's hotdog website: https://elena-jin.github.io/cs20/hw3-joes-hot-dogs/
 
-(hw4) tic tac toe:
+**(hw4)** tic tac toe:
 
         1. https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt1.html
         2. https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt2.html
         3. https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt3.html
         4. FINAL VERSION: https://elena-jin.github.io/cs20/hw4-tic-tac-toe/ttt4.html
 
-(hw5) react needs npm run so just download this and then put that there :D
+**(hw5)** react needs npm run so just download this and then put that there :D
         
 javascript extra credit: 
 
@@ -25,7 +25,7 @@ javascript extra credit:
 midterm project: https://elena-jin.github.io/cs20/midterm/mainmenu.html
         (with yoyo, scarlett, emma and i)
 
-(hw6) practice with json & api ** USE VSCODE LIVE SERVER EXTENSION **: 
+**(hw6)** practice with json & api ** USE VSCODE LIVE SERVER EXTENSION **: 
 
         products1.html: https://elena-jin.github.io/cs20/hw5-api/products1.html
         products2.html: https://elena-jin.github.io/cs20/hw5-api/products2.html
@@ -33,7 +33,8 @@ midterm project: https://elena-jin.github.io/cs20/midterm/mainmenu.html
         NASA random image generator api: https://elena-jin.github.io/cs20/hw5-api/api.html
 
 php extra credit
-- [times: https://elenaj.sgedu.site/php/times.php?n=3](https://elenaj.sgedu.site/php/times.php?n=3)
-- [associative array: https://elenaj.sgedu.site/php/assoc_array.php](https://elenaj.sgedu.site/php/assoc_array.php)
-- [objects](https://elenaj.sgedu.site/php/objects.php)
-- [database](https://elenaj.sgedu.site/php/database.php)
+
+        times.php: https://elenaj.sgedu.site/php/times.php?n=3
+        assoc_array.php: https://elenaj.sgedu.site/php/assoc_array.php
+        objects.php: https://elenaj.sgedu.site/php/objects.php
+        database.php: https://elenaj.sgedu.site/php/database.php
