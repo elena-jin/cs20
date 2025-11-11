@@ -26,13 +26,15 @@ midterm project: https://elena-jin.github.io/cs20/midterm/mainmenu.html
         (with yoyo, scarlett, emma and i)
 
 (hw6) practice with json & api ** USE VSCODE LIVE SERVER EXTENSION **: 
-        `products1.html: https://elena-jin.github.io/cs20/hw5-api/products1.html
+
+        products1.html: https://elena-jin.github.io/cs20/hw5-api/products1.html
         products2.html: https://elena-jin.github.io/cs20/hw5-api/products2.html
         products3.html: https://elena-jin.github.io/cs20/hw5-api/products3.html
-        NASA random image generator api: https://elena-jin.github.io/cs20/hw5-api/api.html`
+        NASA random image generator api: https://elena-jin.github.io/cs20/hw5-api/api.html
 
 php extra cred: 
-        `https://elenaj.sgedu.site/php/times.php?n=3
+
+        https://elenaj.sgedu.site/php/times.php?n=3
         https://elenaj.sgedu.site/php/assoc_array.php
         https://elenaj.sgedu.site/php/objects.php
-        https://elenaj.sgedu.site/php/database.php`
+        https://elenaj.sgedu.site/php/database.php
