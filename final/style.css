@@ -1,0 +1,153 @@
+/* Base Styles */
+body {
+    background-color: #213575; /* Primary Dark Blue Theme */
+    color: #F0F0F0; /* Off-White Text */
+    font-family: 'Courier New', monospace; /* Retro Monospaced Font */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Layout Container */
+.container {
+    max-width: 900px; /* Fixed, Centered Width for Retro Feel */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header/Navigation */
+header {
+    background-color: #3C5A80; /* Secondary Dark Blue */
+    padding: 10px 0;
+    border-bottom: 4px solid #FFD700; /* Yellow Accent Line */
+}
+
+.logo {
+    color: #FFD700; /* Yellow Logo */
+    font-size: 2em;
+    margin: 0;
+    text-shadow: 2px 2px 0 #111111; /* Simple shadow for depth */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #F0F0F0;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px;
+    border: 2px solid transparent;
+}
+
+nav a:hover {
+    border: 2px solid #FFD700; /* Hover effect */
+}
+
+/* Main Content Boxes */
+.intro-box, .feature-box {
+    background-color: #3C5A80;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 3px solid #F0F0F0; /* Sharp, visible border */
+    box-shadow: 5px 5px 0 #111111; /* Retro "screen" shadow */
+}
+
+h2, h3 {
+    color: #FFD700;
+    border-bottom: 2px dotted #FFD700;
+    padding-bottom: 5px;
+}
+
+/* Retro Button Style */
+.retro-button {
+    background-color: #F0F0F0;
+    color: #213575;
+    border: 3px solid #111111;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.1s;
+}
+
+.retro-button:hover {
+    background-color: #FFD700; /* Yellow hover */
+}
+
+.retro-button.accent {
+    background-color: #FFD700;
+    color: #213575;
+}
+
+/* Input Style */
+.retro-input {
+    background-color: #111111;
+    color: #00FF00; /* Classic Terminal Green Text */
+    border: 3px solid #F0F0F0;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    width: 80%;
+    margin-right: 10px;
+}
+
+/* Horizontal Rule */
+.retro-hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 215, 0, 0), rgba(255, 215, 0, 0.75), rgba(255, 215, 0, 0));
+    margin: 40px 0;
+}
+
+/* Split Section */
+.split-section {
+    display: flex;
+    gap: 20px;
+}
+
+.split-section .feature-box {
+    flex: 1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 4px solid #FFD700;
+    font-size: 0.8em;
+}
+
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+/* Responsiveness (Requirement: must be responsive to 600px wide) */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .split-section {
+        flex-direction: column;
+    }
+}
