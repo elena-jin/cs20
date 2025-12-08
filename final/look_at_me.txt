@@ -1,0 +1,29 @@
+can whoever has the db try creating a users database with this sql code
+
+CREATE DATABASE IF NOT EXISTS users_db;
+USE users_db;
+
+// users table
+CREATE TABLE IF NOT EXISTS users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    google_id VARCHAR(255) UNIQUE NOT NULL,  -- Google's unique user ID
+    email VARCHAR(100) NOT NULL,
+    name VARCHAR(100),  -- User's full name from Google
+    profile_picture VARCHAR(500),  -- Google profile picture URL
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_login TIMESTAMP NULL
+);
+
+// watchlist table 
+CREATE TABLE IF NOT EXISTS user_watchlist (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    tmdb_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    poster_path VARCHAR(255),
+    release_date DATE,
+    on_watchlist BOOLEAN DEFAULT 1,
+    added_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    UNIQUE KEY unique_user_movie (user_id, tmdb_id)
+);
