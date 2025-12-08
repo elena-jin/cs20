@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Movie Search</title>
+        <link rel="stylesheet" href="moviestyle.css">
+</head>
+<body>
+        <div class="banner">
+                <h1>Find Movies</h1>
+                <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search movies...">
+                        <button onclick="searchMovies()">Search</button>
+                </div>
+        </div>
+
+        <div class="filters">
+                <select id="genreSelect">
+                <option value="">Genre</option>
+                </select>
+
+                <select id="yearSelect">
+                <option value="">Year</option>
+                </select>
+
+                <select id="languageSelect">
+                <option value="">Language</option>
+                </select>
+
+                <button onclick="applyFilters()">Apply Filters</button>
+        </div>
+
+        <div id="moviesContainer" class="movies-container"></div>
+
+        <div id="movieModal" class="modal">
+                <div class="modal-content">
+                        <span class="close-btn" id="modalCloseBtn">&times;</span>
+                        <div id="modalBody"></div>
+                </div>
+        </div>
+
+        <script src="movieapp.js"></script>
+</body>
+</html>
