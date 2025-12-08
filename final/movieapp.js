@@ -100,7 +100,11 @@ function displayMovies(movies) {
                 <p style="opacity:0.7">${m.release_date ? m.release_date.slice(0, 4) : ""}</p>
                 `;
 
-                card.onclick = () => loadMovieDetail(m.id);
+                card.onclick = () => {
+                        const tmdbId = m.id;
+                        const movieId = 'tmdb_' + tmdbId;
+                        window.location.href = `movies.php?tmdb_id=${encodeURIComponent(tmdbId)}&movieId=${encodeURIComponent(movieId)}`;
+                };
 
                 container.appendChild(card);
         });
