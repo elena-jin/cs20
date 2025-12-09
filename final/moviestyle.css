@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(black, #333);
+}
+
+.search-bar {
+    margin-top: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 4px;
+    border: none;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    margin-left: 5px;
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 4px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px;
+}
+
+.filters select, .filters button {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+}
+
+.movies-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.movie-card {
+    background: #222;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #fff;
+    color: black;
+    width: 70%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+#modalBody img {
+    width: 200px;
+    margin-right: 20px;
+    float: left;
+}
+
+#modalBody::after {
+    content: "";
+    display: block;
+    clear: both;
+}
