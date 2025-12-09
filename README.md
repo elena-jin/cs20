@@ -43,3 +43,14 @@ php extra credit
 
         assignment: https://elenaj.sgedu.site/owls/order_form.php
         extra credit: https://elenaj.sgedu.site/owls/show_orders.php
+
+**(final proj Stock Ticker App — Part 1 / Part 2)**
+
+**(Part 1 (local))**
+- Run: `npm install` then `npm start` (ensure .env contains MONGODB_URI and CSV_FILE)
+- Script reads `companies-1.csv` and inserts into `Stock.PublicCompanies`.
+
+**(Part 2 (web))**
+- Run: `npm install` then `node index.js`
+- Home: `/` — enter query, select search type (ticker/company). Results shown and logged to console.
+- Deploy: set `MONGODB_URI` on hosting provider (Heroku).
