@@ -1,0 +1,13 @@
+{
+        "name": "stock-part1",
+        "version": "1.0.0",
+        "main": "part1.js",
+        "scripts": {
+          "start": "node part1.js"
+        },
+        "dependencies": {
+          "mongodb": "^5.8.0",
+          "dotenv": "^16.0.0"
+        }
+      }
+      
